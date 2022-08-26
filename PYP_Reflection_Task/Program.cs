@@ -79,7 +79,7 @@ void PrintAllInstruments()
         Console.WriteLine("Properties: ");
         foreach (var property in list.GetType().GetProperties())
         {
-            Console.WriteLine($"\t {property.Name} \t {property.GetValue(list)}");
+            Console.WriteLine($"\t {property.Name} {"".PadRight(property.Name.Length >= 15 ? property.Name.Length - 15 : 15 - property.Name.Length)} {property.GetValue(list)}");
         }
         Console.WriteLine("Methods: ");
         foreach (var method in list.GetType().GetMethods
@@ -90,7 +90,7 @@ void PrintAllInstruments()
             BindingFlags.DeclaredOnly)
             .Where(m => !m.IsSpecialName))
         {
-            Console.WriteLine($"\t {method.Name} \t {method.ReturnType}");
+            Console.WriteLine($"\t {method.Name} {"".PadRight(property.Name.Length >= 15 ? property.Name.Length - 15 : 15 - property.Name.Length)} {method.ReturnType}");
         }
         Console.WriteLine("");
     }
