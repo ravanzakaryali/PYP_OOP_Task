@@ -90,7 +90,7 @@ void PrintAllInstruments()
             BindingFlags.DeclaredOnly)
             .Where(m => !m.IsSpecialName))
         {
-            Console.WriteLine($"\t {method.Name} {"".PadRight(property.Name.Length >= 15 ? property.Name.Length - 15 : 15 - property.Name.Length)} {method.ReturnType}");
+            Console.WriteLine($"\t {method.Name} {"".PadRight(method.Name.Length >= 15 ? method.Name.Length - 15 : 15 - method.Name.Length)} {method.ReturnType}");
         }
         Console.WriteLine("");
     }
