@@ -1,4 +1,5 @@
 ﻿using PYP_Reflection_Task.Models;
+using System.Collections;
 using System.Reflection;
 using System.Text.Json;
 
@@ -74,7 +75,6 @@ void PrintAllInstruments()
 {
     foreach (var list in lists)
     {
-
         Console.WriteLine($"{list.GetType().BaseType?.Name} : {list.GetType().Name}");
         Console.WriteLine("Properties: ");
         foreach (var property in list.GetType().GetProperties())
